@@ -24,6 +24,13 @@ def organize_folder():
             shutil.move(file, 'Image_Files')
             print(f"Moved {file} to Image_Files/")
 
+        # 4. Agar file ke aakhir mein .pdf hai
+        elif file.endswith('.pdf'):
+            if not os.path.exists('PDF_Files'):
+                os.makedirs('PDF_Files')
+            shutil.move(file, 'PDF_Files')
+            print(f"Moved {file} to PDF_Files/")
+
 if __name__ == "__main__":
     print("Starting Directory Cleanup...")
     organize_folder()
